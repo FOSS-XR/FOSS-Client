@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.pubert.modtemplate'
+    namespace 'com.fossxr.fossclient'
     compileSdk 35
 
     defaultConfig {
-        applicationId "com.pubert.modtemplate"
+        applicationId "com.fossxr.fossclient"
         minSdk 27
         targetSdk 34
         versionCode 1

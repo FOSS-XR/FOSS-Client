@@ -184,7 +184,7 @@ void ModGUI::Update() {
     }
 
     //This is the menu name
-    std::string start = "<color=" + theme->titleColor + ">" + BNM_OBFUSCATE("baggZ GUI</color>"); //You can change this to your mod name.
+    std::string start = "<color=" + theme->titleColor + ">" + BNM_OBFUSCATE("FOSS Client</color>"); //You can change this to your mod name.
 
 
     std::string menuText = start + "\n";
