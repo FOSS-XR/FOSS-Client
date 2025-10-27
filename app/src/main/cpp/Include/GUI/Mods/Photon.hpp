@@ -1,5 +1,6 @@
 #pragma once
 
 namespace Photon {
-   void LeaveRoom();
-   void CrashAll();
+    void LeaveRoom();
+    void CrashAll();
+}

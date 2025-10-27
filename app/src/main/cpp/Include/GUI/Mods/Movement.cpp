@@ -7,7 +7,19 @@ using namespace std;
 void Movement::Longarms(float length) {
     GameObject::Find("GorillaPlayer")->GetTransform()->SetLocalScale(Vector3(length, length, length));
     }
+
 void Movement::Fly() {
+    float trigR = XRInput::GetFloatFeature(FloatFeature::Trigger, Controller::Right);
+    if (trigR > 0.5f) {
+        Transform *handR = GameObject::Find("RightHand Controller")->GetTransform();
+        Rigidbody *rigidbody = (Rigidbody *) GameObject::Find("GorillaPlayer")->GetComponent(
+                Rigidbody::GetType());
+        Vector3 force = handR->GetForward() * 1.0f;
+        rigidbody->SetVelocity(force);
+    }
+}
+
+void Movement::SlingshotFly() {
     float trigR = XRInput::GetFloatFeature(FloatFeature::Trigger, Controller::Right);
     if (trigR > 0.5f) {
         Transform *handR = GameObject::Find("RightHand Controller")->GetTransform();
@@ -17,6 +29,7 @@ void Movement::Fly() {
         rigidbody->AddForce(force, ForceMode::VelocityChange);
     }
 }
+
 
 void Movement::UpAndDown() {
     {

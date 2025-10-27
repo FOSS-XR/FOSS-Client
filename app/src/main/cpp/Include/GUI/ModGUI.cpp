@@ -65,9 +65,6 @@ void ModsUpdate() {
         if (Buttons::buttons[2][4].enabled) {
             Movement::UpAndDown();
         }
-        if (Buttons::buttons[2][5].enabled) {
-            Movement::Car();
-        }
 
     }
 
@@ -201,7 +198,3 @@ void ModGUI::Update() {
 
     gui->SetText(menuText);
 }
-
-
-
-

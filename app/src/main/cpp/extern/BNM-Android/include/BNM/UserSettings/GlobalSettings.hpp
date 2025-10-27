@@ -18,9 +18,9 @@ static_assert(false, "ByNameModding requires C++20 and above!");
 //#define UNITY_VER 203 // 2020.3.20 - 2020.3.xx
 //#define UNITY_VER 211 // 2021.1.x (Need set UNITY_PATCH_VER to 24 if x (2021.1.x) >= 24)
 //#define UNITY_VER 212 // 2021.2.x
-//#define UNITY_VER 213 // 2021.3.x
+#define UNITY_VER 213 // 2021.3.x
 //#define UNITY_VER 221 // 2022.1.x
-#define UNITY_VER 222 // 2022.2.x - 2022.3.x
+//#define UNITY_VER 222 // 2022.2.x - 2022.3.x
 //#define UNITY_VER 231 // 2023.1.x
 //#define UNITY_VER 232 // 2023.2.x+
 
@@ -175,8 +175,12 @@ inline void Unhook(PTR_T ptr) {
 #define BNM_dlclose dlclose
 #define BNM_dladdr dladdr
 
-
+#define _LIBCPP_DISABLE_CXX17_LDIV_OVERLOADS
+extern "C" {
+#include <stdlib.h>
+}
 #include <cstdlib>
+
 
 // Если вам нужно скрыть методы работы с памятью
 // If you need to hide memory management methods

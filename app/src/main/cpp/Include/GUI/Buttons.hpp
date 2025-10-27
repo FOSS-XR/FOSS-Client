@@ -4,7 +4,9 @@
 #include <iostream>
 #include <GUIInclude.hpp>
 #include <BNMIncludes.hpp>
-#include <GUI/Mods/ModsIncludes.hpp>
+#include "Mods/Movement.hpp"
+#include "Mods/Photon.hpp"
+#include "Mods/Name.hpp"
 
 //Example for including Mod files
 //#include <Mods/ModPage.hpp>
