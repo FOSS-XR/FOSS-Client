@@ -1,3 +1,3 @@
-#include "Movement.h"
-#include "Photon.h"
-#include "Name.h"
+#include "Movement.hpp"
+#include "Photon.hpp"
+#include "Name.hpp"
