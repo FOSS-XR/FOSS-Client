@@ -1,9 +1,9 @@
 #pragma once
 
 namespace Movement {
-    void Longarms();
+    void Longarms(float Length);
     void Fly();
     void SlingshotFly();
     void Speedboost();
-    void UpAndDown();
+    void UpAndDown(bool Active);
 }
