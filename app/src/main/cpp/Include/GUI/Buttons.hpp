@@ -51,10 +51,8 @@ public:
             },
             {//Name - 4
                 Button { .name = "Back", .method = []() { ChangeCat(0); }, .type = "button"},
-                Button { .name = "baggZ Glaze Name", .method = []() {Name::SetName("baggZ On Top");}, .type = "button", .tooltip = "glazer"},
+                Button { .name = "Foss XR Name", .method = Name::SetName, .type = "button"}
                 Button { .name = "Big Name", .method = Name::BigName, .type = "button", .tooltip = "glazer"},
-                Button { .name = "No Name", .method = []() {Name::SetName("");}, .type = "button", .tooltip = "no name"},
-                Button { .name = ":3 Name", .method = []() {Name::SetName("<color=pink>:3</color >");}, .type = "button", .tooltip = "nya~"}
 
 
             },
