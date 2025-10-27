@@ -4,15 +4,8 @@
 
 using namespace std;
 
-void Movement::Longarms(bool active) {
-        if (active)
-        {
-            GameObject::Find("GorillaPlayer")->GetTransform()->SetLocalScale(Vector3(1.5f, 1.5f, 1.5f));
-        }
-        else
-        {
-            GameObject::Find("GorillaPlayer")->GetTransform()->SetLocalScale(Vector3(1.0f, 1.0f, 1.0f));
-        }
+void Movement::Longarms(float length) {
+    GameObject::Find("GorillaPlayer")->GetTransform()->SetLocalScale(Vector3(length, length, length));
     }
 }
 void Movement::Fly() {

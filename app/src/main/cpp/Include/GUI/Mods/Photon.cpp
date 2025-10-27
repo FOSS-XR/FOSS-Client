@@ -18,3 +18,4 @@ void Photon::CrashAll() {
 void Photon::LeaveRoom() {
   PhotonNetwork::LeaveLobby();
 }
+}

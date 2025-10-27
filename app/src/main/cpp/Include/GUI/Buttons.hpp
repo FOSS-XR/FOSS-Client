@@ -41,25 +41,27 @@ public:
             {//Movement - 3 
                 Button { .name = "Back", .method = []() { ChangeCat(0); }, .type = "button"},
                 Button { .name = "Fly", .enableMethod = Movement::Fly, .type = "toggle", .tooltip = "Head Fly" },
-                Button { .name = "Longarms", .enableMethod = []() {Movement::Longarms(true); }, .disableMethod = []() { Movement::Longarms(false); }, .type = "toggle",.tooltip = "Toggles Longarms"},
+                Button { .name = "Longarms", .enableMethod = []() {Movement::Longarms(1.5f); }, .disableMethod = []() { Movement::Longarms(1.0f); }, .type = "toggle",.tooltip = "Toggles Longarms"},
                 Button { .name = "Up & Down", .enableMethod = []() {Movement::UpAndDown(true); }, .disableMethod = []() { Movement::UpAndDown(false); }, .type = "toggle",.tooltip = "Toggles Up & Down"},
             },
             {//Name - 4
                 Button { .name = "Back", .method = []() { ChangeCat(0); }, .type = "button"},
-                Button { .name = "Foss XR Name", .method = Name::SetName, .type = "button"}
+                Button { .name = "Foss XR Name", .method = Name::SetName, .type = "button"},
                 Button { .name = "Big Name", .method = Name::BigName, .type = "button", .tooltip = "glazer"},
 
 
             },
             {//Photon - 5
                 Button { .name = "Back", .method = []() { ChangeCat(0); }, .type = "button"},
-                Button { .name = "Leave Room", .method = Photon::LeaveRoom, .type = "button"}
+                Button { .name = "Leave Room", .method = Photon::LeaveRoom, .type = "button"},
+                Button { .name = "Crash All", .method = Photon::CrashAll, .type = "button"}
 
             },
             {//Credits - 6
                     Button { .name = "Back", .method = []() { ChangeCat(0); }, .type = "button"},
-                    Button { .name = "Pubert - Made the GUI also helped with mods", .type = "button"}
-                    Button { .name = "Fish - helped with mods and fixed every mod", .type = "button"}
+                    Button { .name = "Pubert - Made the GUI also helped with mods", .type = "button"},
+                    Button { .name = "baggZ - Made mods and founded FOSS XR", .type = "button"},
+                    Button { .name = "Fish - helped with mods and fixed every mod", .type = "button"},
                     Button { .name = "Basic - contributer and fixed some mods", .type = "button"}
             }
     };

@@ -3,7 +3,7 @@
 namespace Movement {
     void Longarms();
     void Fly();
-    void SlingShotFly();
-    void SpeedBoost();
+    void SlingshotFly();
+    void Speedboost();
     void UpAndDown();
 }
