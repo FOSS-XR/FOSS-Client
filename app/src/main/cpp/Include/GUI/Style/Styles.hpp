@@ -8,7 +8,7 @@ public:
     inline static std::vector<Style> allStyles = {
             Style{
                     .styleName = "default",
-                    .titleColor = "blue",
+                    .titleColor = "white",
                     .pointerColor = "white",
                     .enabledColor = "lime",
                     .disabledColor = "white"

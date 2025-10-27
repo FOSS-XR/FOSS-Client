@@ -6,8 +6,6 @@
 #include <json.hpp>
 #include "Include/GUI/ModGUI.hpp"
 
-Class playerClass = Class("GorillaLocomotion", "Player");
-
 void (*Awake)(void*);
 void new_Awake(void* instance) {
     Awake(instance);

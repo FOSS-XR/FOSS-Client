@@ -44,8 +44,7 @@ public:
                 Button { .name = "Slingshot Fly", .enableMethod = Movement::SlingshotFly, .type = "toggle", .tooltip = "Hand Fly" },
                 Button { .name = "Longarms", .enableMethod = []() {Movement::Longarms(true); }, .disableMethod = []() { Movement::Longarms(false); }, .type = "toggle",.tooltip = "Toggles Longarms"},
                 Button { .name = "Up & Down", .enableMethod = []() {Movement::UpAndDown(true); }, .disableMethod = []() { Movement::UpAndDown(false); }, .type = "toggle",.tooltip = "Toggles Up & Down"},
-                Button { .name = "Car Monke", .type = "toggle", .tooltip = "Driving in my car right after a beer" },
-                Button { .name = "Speedboost", .enableMethod = []() {Movement::Speedboost(playerClass, 1.5f); }, .disableMethod = []() {Movement::Speedboost(playerClass, 1.0f); }, .type = "toggle", .tooltip = "Weeeeeeeeeee" }
+                Button { .name = "Car Monke", .type = "toggle", .tooltip = "Driving in my car right after a beer" }
 
 
             },
@@ -65,8 +64,7 @@ public:
             },
             {//Credits - 6
                     Button { .name = "Back", .method = []() { ChangeCat(0); }, .type = "button"},
-                    Button { .name = "Pubert - Made the GUI also helped with mods", .type = "button"},
-                    Button { .name = "Pubert - Made the GUI also helped with mods", .type = "button"},
+                    Button { .name = "Pubert - Made the GUI also helped with mods", .type = "button"}
 
             }
     };
