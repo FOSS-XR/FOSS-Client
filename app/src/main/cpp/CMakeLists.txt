@@ -63,6 +63,9 @@ add_library(${CMAKE_PROJECT_NAME}
         Include/GUI/GUISettings.cpp
         Include/GUI/ModGUI.cpp
         Include/XRInput.cpp
+        Include/GUI/Mods/Movement.cpp
+        Include/GUI/Mods/Name.cpp
+        Include/GUI/Mods/Photon.cpp
 )
 
 target_include_directories(
