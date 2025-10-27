@@ -5,5 +5,5 @@ namespace Movement {
     void Fly();
     void SlingshotFly();
     void Speedboost();
-    void UpAndDown(bool Active);
+    void UpAndDown();
 }

@@ -1,6 +1,7 @@
 #include "BNMResolve.hpp"
 #include "PhotonResolve.hpp"
 #include "BNM/Property.hpp"
+#include "Name.hpp"
 
 void Name::SetName() {
   PhotonNetwork::GetLocalPlayer()->SetNickname("FOSS XR - FOSS CLIENT");

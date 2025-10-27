@@ -63,7 +63,7 @@ void ModsUpdate() {
             Movement::SlingshotFly();
         }
         if (Buttons::buttons[2][4].enabled) {
-            Movement::UpAndDown(true);
+            Movement::UpAndDown();
         }
         if (Buttons::buttons[2][5].enabled) {
             Movement::Car();
