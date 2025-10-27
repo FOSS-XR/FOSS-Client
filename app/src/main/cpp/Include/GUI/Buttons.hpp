@@ -31,7 +31,7 @@ public:
                 Button { .name = "Movement", .method = []() { ChangeCat(2); }, .type = "button"},
                 Button { .name = "Name", .method = []() { ChangeCat(3); }, .type = "button"},
                 Button { .name = "Photon", .method = []() { ChangeCat(4); }, .type = "button"},
-                Button { .name = "Credits", .method = []() { ChangeCat(5); }, .type = "button"},
+                Button { .name = "Credits", .method = []() { ChangeCat(5); }, .type = "button"}
 
             },
             {//Settings Page - 2
@@ -44,7 +44,8 @@ public:
                 Button { .name = "Slingshot Fly", .enableMethod = Movement::SlingshotFly, .type = "toggle", .tooltip = "Hand Fly" },
                 Button { .name = "Longarms", .enableMethod = []() {Movement::Longarms(true); }, .disableMethod = []() { Movement::Longarms(false); }, .type = "toggle",.tooltip = "Toggles Longarms"},
                 Button { .name = "Up & Down", .enableMethod = []() {Movement::UpAndDown(true); }, .disableMethod = []() { Movement::UpAndDown(false); }, .type = "toggle",.tooltip = "Toggles Up & Down"},
-                Button { .name = "Car Monke", .type = "toggle", .tooltip = "Driving in my car right after a beer" }
+                Button { .name = "Car Monke", .type = "toggle", .tooltip = "Driving in my car right after a beer" },
+                Button { .name = "Speedboost", .type = "toggle",  .enableMethod = []() {Movement::Speedboost(1.5f); }, .disableMethod = []() {Movement::Speedboost(1.0f); }, .tooltip = "Driving in my car right after a beer" }
 
 
             },

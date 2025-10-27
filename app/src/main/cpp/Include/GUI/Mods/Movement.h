@@ -15,7 +15,9 @@ public:static void Longarms(bool active) {
         }
     }
 
-public:static void Speedboost(BNM::IL2CPP::Il2CppObject* self, float speed) {
+public:static void Speedboost(float speed) {
+        auto self =  Class("GorillaLocomotion", "Player").GetField("Instance")._instance;
+
         BNM::Field<float> jumpMultiplier = Class(self).GetField("jumpMultiplier");
         jumpMultiplier.SetInstance(self);
 

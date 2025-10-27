@@ -6,6 +6,8 @@
 #include <json.hpp>
 #include "Include/GUI/ModGUI.hpp"
 
+ Il2CppObject playerInstance;
+
 void (*Awake)(void*);
 void new_Awake(void* instance) {
     Awake(instance);
