@@ -16,21 +16,37 @@ void Movement::Longarms(bool active) {
     }
 }
 void Movement::Fly() {
-    float trig = XRInput::GetFloatFeature(FloatFeature::Trigger, Controller::Right);
-    if (trig > 0.5f) {
-        Transform* mainCam = GameObject::Find("Main Camera")->GetTransform();
-        Rigidbody* rb = (Rigidbody*)GameObject::Find("GorillaPlayer")
-                ->GetComponent(Rigidbody::GetType());
-        Vector3 force = mainCam->GetForward() * 1.0f; // adjust force multiplier as needed
-        rb->AddForce(force, ForceMode::VelocityChange);
-    }
-}
-void Movement::SlingShotFly
         float trigR = XRInput::GetFloatFeature(FloatFeature::Trigger, Controller::Right);
         if (trigR > 0.5f) {
-            Transform *Cam = GameObject::Find("Main Camera")->GetTransform();
-            Rigidbody *rigidbody = (Rigidbody *) GameObject::Find("GorillaPlayer")->GetComponent(
-                    Rigidbody::GetType());
-            Vector3 Camforce = Cam->GetForward() * 15.0f;
-            Vector3 force = Vector3(Camforce.x, 0.0f, Camforce.z);
-            rigidbody->SetVelocity(Camforce);
+            Transform *handR = GameObject::Find("RightHand Controller")->GetTransform();
+            Rigidbody *rigidbody = (Rigidbody *) GameObject::Find("GorillaPlayer")->GetComponent(Rigidbody::GetType());
+            Vector3 force = handR->GetForward() * 1.0f;
+            rigidbody->AddForce(force, ForceMode::VelocityChange);
+    }
+}
+
+void Movement::UpAndDown() {
+    {
+        bool upDownEnabled = false;
+        if (!upDownEnabled)
+        {
+            return;
+        }
+
+        Vector3 Up(Vector3(0, 1, 0));
+        Vector3 Down(Vector3(0, -1, 0));
+
+        float trigR = XRInput::GetFloatFeature(FloatFeature::Trigger, Controller::Right);
+        float trigL = XRInput::GetFloatFeature(FloatFeature::Trigger, Controller::Left);
+        Rigidbody *rigidbody = (Rigidbody *) GameObject::Find("GorillaPlayer")->GetComponent(Rigidbody::GetType());
+
+        if (trigR > 0.5f)
+        {
+            rigidbody->AddForce(Up, ForceMode::VelocityChange);
+        }
+        if (trigL > 0.5f)
+        {
+            rigidbody->AddForce(Down, ForceMode::VelocityChange);
+        }
+    }
+};
