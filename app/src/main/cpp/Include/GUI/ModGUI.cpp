@@ -55,7 +55,6 @@ void ModGUI::ChangeFont(Font* customFont){
 }
 
 void ModsUpdate() {
-
         if (Buttons::buttons[2][1].enabled) {
             Movement::Fly();
         }
@@ -65,7 +64,9 @@ void ModsUpdate() {
         if (Buttons::buttons[2][4].enabled) {
             Movement::UpAndDown();
         }
-
+        if (Buttons::buttons[2][5].enabled) {
+            Movement::Car();
+        }
     }
 
 void ModGUI::Update() {

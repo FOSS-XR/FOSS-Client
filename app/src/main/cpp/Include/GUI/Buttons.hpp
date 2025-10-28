@@ -46,6 +46,7 @@ public:
                 Button { .name = "Slingshot Fly", .enableMethod = Movement::SlingshotFly, .type = "toggle", .tooltip = "Weeeeeeeee" },
                 Button { .name = "Longarms", .enableMethod = []() {Movement::Longarms(1.5f); }, .disableMethod = []() { Movement::Longarms(1.0f); }, .type = "toggle",.tooltip = "Toggles Longarms"},
                 Button { .name = "Up & Down", .type = "toggle",.tooltip = "Toggles Up & Down"},
+                Button { .name = "Car", .type = "toggle",.tooltip = "drunk driving so fun"},
             },
             {//Name - 4
                 Button { .name = "Back", .method = []() { ChangeCat(0); }, .type = "button"},

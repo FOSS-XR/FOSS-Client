@@ -5,4 +5,5 @@ namespace Movement {
     void Fly();
     void SlingshotFly();
     void UpAndDown();
+    void Car();
 }

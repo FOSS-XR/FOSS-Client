@@ -19,6 +19,23 @@ void Movement::Fly() {
     }
 }
 
+void Movement::Car() {
+    Transform *handR = GameObject::Find("MainCamera")->GetTransform();
+    Rigidbody *rigidbody = (Rigidbody *) GameObject::Find("GorillaPlayer")->GetComponent(
+            Rigidbody::GetType());
+
+    float trigR = XRInput::GetFloatFeature(FloatFeature::Trigger, Controller::Right);
+    if (trigR > 0.5f) {
+        Vector3 force = handR->GetForward() * 1.0f;
+        rigidbody->SetVelocity(force);
+    }
+    float trigL = XRInput::GetFloatFeature(FloatFeature::Trigger, Controller::Left);
+    if (trigL > 0.5f) {
+        Vector3 force = handR->GetForward() * -1.0f;
+        rigidbody->SetVelocity(force);
+    }
+}
+
 void Movement::SlingshotFly() {
     float trigR = XRInput::GetFloatFeature(FloatFeature::Trigger, Controller::Right);
     if (trigR > 0.5f) {
