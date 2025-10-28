@@ -51,8 +51,6 @@ public:
                 Button { .name = "Back", .method = []() { ChangeCat(0); }, .type = "button"},
                 Button { .name = "Foss XR Name", .method = Name::SetName, .type = "button"},
                 Button { .name = "Big Name", .method = Name::BigName, .type = "button", .tooltip = "glazer"},
-
-
             },
             {//Photon - 5
                 Button { .name = "Back", .method = []() { ChangeCat(0); }, .type = "button"},
