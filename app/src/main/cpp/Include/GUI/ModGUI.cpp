@@ -173,6 +173,7 @@ void ModGUI::Update() {
             theme = new Style {
                     .styleName = "rainbow",
                     .titleColor = rnb[rainbowIndex],
+                    .buttonColor = rnb[rainbowIndex],
                     .pointerColor = rnb[rainbowIndex],
                     .enabledColor = rnb[rainbowIndex],
                     .disabledColor = "red",
@@ -188,7 +189,7 @@ void ModGUI::Update() {
 
 
     for (int i = 0; i < modz.size(); ++i) {
-        menuText += (GUISettings::cursorIndex == i ? "<color=" + theme->pointerColor + ">-></color> " : "") + "<color=" + theme->titleColor + ">" + modz[i]->getFullName() + "</color>";
+        menuText += (GUISettings::cursorIndex == i ? "<color=" + theme->pointerColor + ">-></color> " : "") + "<color=" + theme->buttonColor + ">" + modz[i]->getFullName() + "</color>";
         if (modz[i]->type == "toggle") {
             string ts = (modz[i]->enabled ? "<color=" + theme->enabledColor + ">= true</color>" : "<color=" + theme->disabledColor + ">= false</color>");
             menuText += " " + ts;

@@ -8,7 +8,8 @@ public:
     inline static std::vector<Style> allStyles = {
             Style{
                     .styleName = "default",
-                    .titleColor = "white",
+                    .titleColor = "blue",
+                    .buttonColor = "white",
                     .pointerColor = "white",
                     .enabledColor = "lime",
                     .disabledColor = "white"
@@ -19,6 +20,7 @@ public:
             Style{
                     .styleName = "red",
                     .titleColor = "red",
+                    .buttonColor = "red",
                     .pointerColor = "white",
                     .enabledColor = "lime",
                     .disabledColor = "red"
@@ -26,30 +28,10 @@ public:
             Style{
                     .styleName = "blue",
                     .titleColor = "blue",
+                    .buttonColor = "blue",
                     .pointerColor = "white",
                     .enabledColor = "green",
                     .disabledColor = "blue"
-            },
-            Style{//Can delete these styles if you want and make your own
-                    .styleName = "lmko",
-                    .titleColor = "magenta",
-                    .pointerColor = "white",
-                    .enabledColor = "blue",
-                    .disabledColor = "magenta"
-            },
-            Style{
-                    .styleName = "mre",
-                    .titleColor = "black",
-                    .pointerColor = "black",
-                    .enabledColor = "black",
-                    .disabledColor = "black"
-            },
-            Style{
-                    .styleName = "jae",
-                    .titleColor = "lime",
-                    .pointerColor = "lime",
-                    .enabledColor = "blue",
-                    .disabledColor = "lime"
             }
     };
 };
