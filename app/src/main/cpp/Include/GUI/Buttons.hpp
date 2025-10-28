@@ -38,7 +38,7 @@ public:
             },
             {//Settings Page - 2
                 Button { .name = "Back", .method = []() { ChangeCat(0); }, .type = "button"},
-                Button { .name = "Menu Theme", .type = "slider", .maxSlide = 6, .slideNames = std::vector<std::string>{ "default", "rainbow", "red", "blue", "lmko", "mre", "jae" }},
+                Button { .name = "Menu Theme", .type = "slider", .maxSlide = 3, .slideNames = std::vector<std::string>{ "default", "rainbow", "red", "blue"}},
             },
             {//Movement - 3 
                 Button { .name = "Back", .method = []() { ChangeCat(0); }, .type = "button"},
