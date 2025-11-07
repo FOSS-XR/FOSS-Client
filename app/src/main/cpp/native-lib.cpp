@@ -26,7 +26,7 @@ void OnLoaded() {
     BNM_LOG_INFO("Loaded Successfully");
 
     // PRO TIP: Use BNM_OBFUSCATE on all the string you use, just in case you want to implement a string obfuscator for later.
-
+    // circuit was here
     InvokeHook(Class(BNM_OBFUSCATE("GorillaLocomotion"), BNM_OBFUSCATE("Player"), Image(
             BNM_OBFUSCATE("Assembly-CSharp.dll"))).GetMethod(BNM_OBFUSCATE("LateUpdate")), new_LateUpdate, LateUpdate);
 
