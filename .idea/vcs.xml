@@ -4,6 +4,5 @@
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/app/src/main/cpp/extern/BNM-Android" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/app/src/main/cpp/extern/Dobby" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/../ModTemplate/app/src/main/cpp/extern/Dobby" vcs="Git" />
   </component>
 </project>
