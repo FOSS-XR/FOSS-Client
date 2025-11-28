@@ -25,13 +25,11 @@ void new_LateUpdate(void* instance) {
 void OnLoaded() {
     BNM_LOG_INFO("Loaded Successfully");
 
-    // PRO TIP: Use BNM_OBFUSCATE on all the string you use, just in case you want to implement a string obfuscator for later.
+    InvokeHook(Class("GorillaLocomotion", "Player", Image(
+            "Assembly-CSharp.dll")).GetMethod("LateUpdate"), new_LateUpdate, LateUpdate);
 
-    InvokeHook(Class(BNM_OBFUSCATE("GorillaLocomotion"), BNM_OBFUSCATE("Player"), Image(
-            BNM_OBFUSCATE("Assembly-CSharp.dll"))).GetMethod(BNM_OBFUSCATE("LateUpdate")), new_LateUpdate, LateUpdate);
-
-    InvokeHook(Class(BNM_OBFUSCATE("GorillaLocomotion"), BNM_OBFUSCATE("Player"), Image(
-            BNM_OBFUSCATE("Assembly-CSharp.dll"))).GetMethod(BNM_OBFUSCATE("Awake")), new_Awake, Awake);
+    InvokeHook(Class("GorillaLocomotion", "Player", Image(
+            "Assembly-CSharp.dll")).GetMethod("Awake"), new_Awake, Awake);
 }
 
 JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, [[maybe_unused]] void *reserved) {
