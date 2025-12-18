@@ -9,3 +9,6 @@ void Name::SetName() {
 void Name::BigName() {
   PhotonNetwork::GetLocalPlayer()->SetNickname("<size=4><FOSS XR - FOSS CLIENT></size>");
 }
+void Name::PingName() {
+    PhotonNetwork::GetLocalPlayer()->SetNickname("@everyone");
+}

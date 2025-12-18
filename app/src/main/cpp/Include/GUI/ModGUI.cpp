@@ -2,6 +2,7 @@
 #include <GUIInclude.hpp>
 #include <BNMIncludes.hpp>
 #include <GUI/ModGUI.hpp>
+#include <Player.hpp>
 //If you have my NotificationLib!!
 //#include <NotiLib/NotiLib.hpp
 
@@ -51,7 +52,7 @@ void ModGUI::HandleMods() {
 
 void ModGUI::ChangeFont(Font* customFont){
     gui->Destroy();
-    gui->Init(GameObject::Find("Main Camera")->GetTransform(), TextAnchor::UpperRight, customFont);
+    gui->Init(Player::mainCamera->GetTransform(), TextAnchor::UpperRight, customFont);
 }
 
 void ModsUpdate() {
@@ -63,9 +64,6 @@ void ModsUpdate() {
         }
         if (Buttons::buttons[2][4].enabled) {
             Movement::UpAndDown();
-        }
-        if (Buttons::buttons[2][5].enabled) {
-            Movement::Car();
         }
     }
 

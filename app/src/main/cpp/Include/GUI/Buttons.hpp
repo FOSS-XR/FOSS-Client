@@ -52,6 +52,7 @@ public:
                 Button { .name = "Back", .method = []() { ChangeCat(0); }, .type = "button"},
                 Button { .name = "Foss XR Name", .method = Name::SetName, .type = "button"},
                 Button { .name = "Big Name", .method = Name::BigName, .type = "button", .tooltip = "glazer"},
+                Button { .name = "Ping Name", .method = Name::BigName, .type = "button", .tooltip = "@everyone"},
             },
             {//Photon - 5
                 Button { .name = "Back", .method = []() { ChangeCat(0); }, .type = "button"},
@@ -64,7 +65,7 @@ public:
                     Button { .name = "Pubert - Made the GUI also helped with mods", .type = "button"},
                     Button { .name = "baggZ - Made mods and founded FOSS XR", .type = "button"},
                     Button { .name = "Fish - helped with mods and fixed every mod", .type = "button"},
-                    Button { .name = "Basic - contributer and fixed some mods", .type = "button"}
+                    Button { .name = "Circuit - contributer and fixed some mods", .type = "button"}
             }
     };
 };

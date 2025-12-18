@@ -1,6 +1,7 @@
 #include "Movement.hpp"
 #include "BNMResolve.hpp"
 #include "XRInput.hpp"
+#include <Player.hpp>
 
 using namespace std;
 
@@ -11,27 +12,10 @@ void Movement::Longarms(float length) {
 void Movement::Fly() {
     float trigR = XRInput::GetFloatFeature(FloatFeature::Trigger, Controller::Right);
     if (trigR > 0.5f) {
-        Transform *handR = GameObject::Find("RightHand Controller")->GetTransform();
+        Transform *handR = Player::handR->GetTransform();
         Rigidbody *rigidbody = (Rigidbody *) GameObject::Find("GorillaPlayer")->GetComponent(
                 Rigidbody::GetType());
         Vector3 force = handR->GetForward() * 1.0f;
-        rigidbody->SetVelocity(force);
-    }
-}
-
-void Movement::Car() {
-    Transform *handR = GameObject::Find("MainCamera")->GetTransform();
-    Rigidbody *rigidbody = (Rigidbody *) GameObject::Find("GorillaPlayer")->GetComponent(
-            Rigidbody::GetType());
-
-    float trigR = XRInput::GetFloatFeature(FloatFeature::Trigger, Controller::Right);
-    if (trigR > 0.5f) {
-        Vector3 force = handR->GetForward() * 1.0f;
-        rigidbody->SetVelocity(force);
-    }
-    float trigL = XRInput::GetFloatFeature(FloatFeature::Trigger, Controller::Left);
-    if (trigL > 0.5f) {
-        Vector3 force = handR->GetForward() * -1.0f;
         rigidbody->SetVelocity(force);
     }
 }
@@ -39,11 +23,33 @@ void Movement::Car() {
 void Movement::SlingshotFly() {
     float trigR = XRInput::GetFloatFeature(FloatFeature::Trigger, Controller::Right);
     if (trigR > 0.5f) {
-        Transform *handR = GameObject::Find("RightHand Controller")->GetTransform();
+        Transform *handR = Player::handR->GetTransform();
         Rigidbody *rigidbody = (Rigidbody *) GameObject::Find("GorillaPlayer")->GetComponent(
                 Rigidbody::GetType());
         Vector3 force = handR->GetForward() * 1.0f;
         rigidbody->AddForce(force, ForceMode::VelocityChange);
+    }
+}
+
+void Movement::Platforms()
+{
+    GameObject* platR = nullptr;
+    GameObject* platL = nullptr;
+    bool gripR = XRInput::GetBoolFeature(BoolFeature::GripButton, Controller::Right);
+    bool gripL = XRInput::GetBoolFeature(BoolFeature::GripButton, Controller::Left);
+
+    if(gripR) {
+        if(!platR) {
+            platR = GameObject::CreatePrimitive(PrimitiveType::Cube);
+            Renderer* renderer = (Renderer*)platR->GetComponent(Renderer::GetType());
+            if (renderer) {
+                Material* mat = renderer->GetMaterial();
+                if (mat) mat->SetColor(Color(0.0f, 0.0f, 1.0f));
+            }
+            platR->GetTransform()->SetLocalScale(Vector3(0.025f, 0.3f, 0.4f));
+            platR->GetTransform()->SetLocalRotation(Player::handR->GetTransform()->GetRotation());
+            platR->GetTransform()->SetLocalPosition(Player::handR->GetTransform()->GetPosition());
+        }
     }
 }
 

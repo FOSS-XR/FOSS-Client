@@ -5,13 +5,14 @@
 #include <httplib.h>
 #include <json.hpp>
 #include "Include/GUI/ModGUI.hpp"
+#include <Player.hpp>
 
  Il2CppObject playerInstance;
 
 void (*Awake)(void*);
 void new_Awake(void* instance) {
     Awake(instance);
-
+    Player::Init();
     ModGUI::Init();
 }
 
